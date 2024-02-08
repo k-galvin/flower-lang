@@ -1,27 +1,23 @@
 export interface Flower {
   id: number;
   name: string;
-  price: number;
   description: string;
 }
 
 export const flowers = [
   {
     id: 1,
-    name: 'Phone XL',
-    price: 799,
-    description: 'A large phone with one of the best screens',
+    name: 'Red Rose',
+    description: 'A fragrant flower and symbol of romance',
   },
   {
     id: 2,
-    name: 'Phone Mini',
-    price: 699,
-    description: 'A great phone with one of the best cameras',
+    name: 'Yellow Tulip',
+    description: 'These perennials express platonic, friendly affection',
   },
   {
     id: 3,
-    name: 'Phone Standard',
-    price: 299,
-    description: '',
+    name: 'Belladonna',
+    description: 'This purple bloom has a storied and deadly history',
   },
 ];
