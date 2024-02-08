@@ -1,0 +1,12 @@
+.logo {
+  width: 130px;
+  padding-right: 1em;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  background-color: lightpink;
+  color: cornsilk;
+}
