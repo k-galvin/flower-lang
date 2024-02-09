@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlowerListComponent } from './flower-list.component';
+import { OutcomeComponent } from './outcome.component';
 
-describe('FlowerListComponent', () => {
-  let component: FlowerListComponent;
-  let fixture: ComponentFixture<FlowerListComponent>;
+describe('OutcomeComponent', () => {
+  let component: OutcomeComponent;
+  let fixture: ComponentFixture<OutcomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FlowerListComponent]
+      imports: [OutcomeComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(FlowerListComponent);
+    fixture = TestBed.createComponent(OutcomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

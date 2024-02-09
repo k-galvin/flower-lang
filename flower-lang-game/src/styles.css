@@ -141,3 +141,11 @@ app-top-bar h1 {
   border-radius: 2px;
   background-color: #eeeeee;
 }
+
+.title {
+  color: white;
+}
+
+.small-img {
+  height: 68px;
+}
