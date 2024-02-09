@@ -1,9 +1,9 @@
-<h2>Flowers</h2>
-<p></p>
+<h2>{{ situation.name }}</h2>
+<p>{{ situation.description }}</p>
 
 <h3>Build a bouquet using 3 types of flowers.</h3>
 
-<div *ngFor="let flower of flowers">
+<div *ngFor="let flower of situationFlowers">
   <button type="button" (click)="addToBouquet(flower)">
     {{ flower.name }}
   </button>
@@ -15,4 +15,4 @@
   <span>{{ stem.name }}</span>
 </div>
 
-<button type="button">Deliver the bouquet!</button>
+<button type="button" (click)="determineOutcome()">Deliver the bouquet!</button>

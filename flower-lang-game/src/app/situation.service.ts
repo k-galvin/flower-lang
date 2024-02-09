@@ -1,6 +1,5 @@
-import { BouquetService } from './bouquet.service';
 import { Situation } from './situations';
-// import current situation
+import { flowers } from './flowers';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,7 +12,7 @@ export class SituationService {
     name: 'Crush',
     description: 'Build a bouquet to express your feelings for your crush.',
     type: 'romantic',
-    flowers: [1, 3, 5, 9, 23, 24],
+    flowerIds: [1, 3, 5, 9, 23, 24],
     goodOutcome: 1,
     badOutcome: 2,
   };
@@ -25,6 +24,20 @@ export class SituationService {
   // Update to the next situation
   updateSituation(situation: Situation) {
     this.situation = situation;
+  }
+
+  // Get the flowers available for the situation
+  getSituationFlowers(situation: Situation) {
+    const situationFlowers = [];
+
+    for (const id of situation.flowerIds) {
+      const foundFlower = flowers.find((flower) => flower.id === id);
+      if (foundFlower) {
+        situationFlowers.push(foundFlower);
+      }
+    }
+
+    return situationFlowers;
   }
 
   constructor() {}

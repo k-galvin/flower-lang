@@ -19,11 +19,12 @@ export class OutcomeService {
   determineOutcome(situation: Situation, bouquet: Flower[]) {
     for (let flower of bouquet) {
       if (!flower.positive) {
-        this.outcome = outcomes[situation.badOutcome + 1];
+        this.outcome = outcomes[situation.badOutcome];
       } else {
-        this.outcome = outcomes[situation.goodOutcome + 1];
+        this.outcome = outcomes[situation.goodOutcome];
       }
     }
+    return this.outcome.id;
   }
 
   constructor() {}
