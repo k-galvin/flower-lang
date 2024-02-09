@@ -3,7 +3,7 @@
 
 <h3>Build a bouquet using 3 types of flowers.</h3>
 
-<div *ngFor="let flower of situationFlowers">
+<div *ngFor="let flower of availableFlowers">
   <button type="button" (click)="addToBouquet(flower)">
     {{ flower.name }}
   </button>
@@ -11,8 +11,10 @@
 
 <h3>Your Bouquet:</h3>
 
-<div class="bouquet-stem" *ngFor="let stem of stems">
-  <span>{{ stem.name }}</span>
+<div class="bouquet" *ngFor="let flower of bouquet">
+  <span>{{ flower.name }}</span>
 </div>
 
-<button type="button" (click)="determineOutcome()">Deliver the bouquet!</button>
+<button type="button" (click)="navigateToOutcome()">
+  Deliver the bouquet!
+</button>

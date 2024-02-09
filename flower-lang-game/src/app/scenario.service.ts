@@ -6,22 +6,17 @@ import { Flower } from './flowers';
 @Injectable({
   providedIn: 'root',
 })
-export class OutcomeService {
+export class ScenarioService {
   // Initial outcome
-  outcome: Outcome = {
-    id: 1,
-    name: 'Successful Courtship',
-    description: 'Your crush accepts the court and a marriage is arranged.',
-    nextSituation: 2,
-  };
+  outcome: Outcome = outcomes[0];
 
   // Determine what outcome the bouquet will lead too
   determineOutcome(situation: Situation, bouquet: Flower[]) {
     for (let flower of bouquet) {
       if (!flower.positive) {
-        this.outcome = outcomes[situation.badOutcome];
+        this.outcome = outcomes[situation.badOutcomeIndex];
       } else {
-        this.outcome = outcomes[situation.goodOutcome];
+        this.outcome = outcomes[situation.goodOutcomeIndex];
       }
     }
     return this.outcome.id;

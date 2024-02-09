@@ -4,8 +4,8 @@ export interface Situation {
   description: string;
   type: string;
   flowerIds: number[];
-  goodOutcome: number;
-  badOutcome: number;
+  goodOutcomeIndex: number;
+  badOutcomeIndex: number;
 }
 
 export const situations = [
@@ -15,8 +15,8 @@ export const situations = [
     description: 'Build a bouquet to express your feelings for your crush.',
     type: 'romantic',
     flowerIds: [1, 3, 5, 9, 23, 24],
-    goodOutcome: 0,
-    badOutcome: 1,
+    goodOutcomeIndex: 0,
+    badOutcomeIndex: 1,
   },
   {
     id: 2,
@@ -25,8 +25,8 @@ export const situations = [
       'Your wedding is quickly approaching. Choose the flowers that will make up the wedding bouquet.',
     type: 'romantic',
     flowerIds: [6, 8, 10, 21, 27, 30],
-    goodOutcome: 2,
-    badOutcome: 3,
+    goodOutcomeIndex: 2,
+    badOutcomeIndex: 3,
   },
   {
     id: 3,
@@ -34,8 +34,8 @@ export const situations = [
     description: '',
     type: 'friendly',
     flowerIds: [12, 14, 15, 19, 28, 26],
-    goodOutcome: 4,
-    badOutcome: 5,
+    goodOutcomeIndex: 4,
+    badOutcomeIndex: 5,
   },
   {
     id: 4,
@@ -44,8 +44,8 @@ export const situations = [
       'Your spouse comes down with the influenza. Build a bouquet that conveys your desire for them to get better',
     type: 'romantic',
     flowerIds: [3, 13, 17, 4, 26, 29],
-    goodOutcome: 6,
-    badOutcome: 7,
+    goodOutcomeIndex: 6,
+    badOutcomeIndex: 7,
   },
   {
     id: 5,
@@ -54,8 +54,8 @@ export const situations = [
       'Your boss has invited you to his home for an important dinner. Build a bouquet that conveys your admiration and respect.',
     type: 'professional',
     flowerIds: [16, 17, 18, 19, 21, 24],
-    goodOutcome: 8,
-    badOutcome: 9,
+    goodOutcomeIndex: 8,
+    badOutcomeIndex: 9,
   },
   {
     id: 6,
@@ -64,8 +64,8 @@ export const situations = [
       'Build a bouquet to gift to your spouse on the event of your 5th anniversary.',
     type: 'romantic',
     flowerIds: [2, 4, 7, 9, 23, 28],
-    goodOutcome: 10,
-    badOutcome: 11,
+    goodOutcomeIndex: 10,
+    badOutcomeIndex: 11,
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ export const situations = [
       'An acquaintance passes suddenly. Build a bouquet in order to offer the family your condolences.',
     type: 'sad',
     flowerIds: [11, 16, 20, 22, 25, 29],
-    goodOutcome: 12,
-    badOutcome: 13,
+    goodOutcomeIndex: 12,
+    badOutcomeIndex: 13,
   },
 ];

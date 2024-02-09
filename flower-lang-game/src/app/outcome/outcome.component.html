@@ -1,6 +1,6 @@
-<h2>{{ outcome?.name }}</h2>
-<h3>{{ outcome?.description }}</h3>
+<h2>{{ outcome.name }}</h2>
+<h3>{{ outcome.description }}</h3>
 
-<button type="button" (click)="nextSituation(outcome)">
-  {{ outcome?.nextSituation !== -1 ? "Next" : "Restart" }}
+<button type="button" (click)="navigateToSituation(outcome)">
+  {{ outcome.nextSituation !== -1 ? "Next" : "Restart" }}
 </button>

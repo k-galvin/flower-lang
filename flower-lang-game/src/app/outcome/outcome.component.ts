@@ -8,29 +8,35 @@ import { Outcome, outcomes } from '../outcomes';
   styleUrls: ['./outcome.component.css'],
 })
 export class OutcomeComponent implements OnInit {
-  outcome: Outcome | undefined;
+  // Initialize with the first outcome
+  outcome: Outcome = outcomes[0];
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // First get the outcome id from the current route.
+    // Get the outcome id from the current route
     const routeParams = this.route.snapshot.paramMap;
     const outcomeIdFromRoute = Number(routeParams.get('outcomeId'));
 
-    // Find the outcome that corresponds to the id provided in the route.
-    this.outcome = outcomes.find(
+    // Find the outcome that corresponds to the id provided in the route
+    const foundOutcome = outcomes.find(
       (outcome) => outcome.id === outcomeIdFromRoute
     );
+
+    // Update the current outcome
+    if (foundOutcome) {
+      this.outcome = foundOutcome;
+    } else {
+      throw new Error('Outcome not found');
+    }
   }
 
   // Navigate to the next situation
-  nextSituation(outcome: Outcome | undefined) {
-    if (outcome) {
-      if (outcome.nextSituation === -1) {
-        this.router.navigateByUrl(`/situation/1`);
-      } else {
-        this.router.navigateByUrl(`/situation/${outcome.nextSituation}`);
-      }
+  navigateToSituation(outcome: Outcome) {
+    if (outcome.nextSituation === -1) {
+      this.router.navigateByUrl('');
+    } else {
+      this.router.navigateByUrl(`/situation/${outcome.nextSituation}`);
     }
   }
 }
